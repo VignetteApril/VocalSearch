@@ -1,0 +1,5 @@
+elasticsearch
+gradio
+torch>=1.13
+torchaudio
+funasr
