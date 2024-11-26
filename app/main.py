@@ -114,6 +114,12 @@ def process_audio_and_search(audio_file):
 def main():
     with gr.Blocks() as demo:
         gr.Markdown("### 非实时语音转文字并检索文件名系统")
+        # 启动时自动索引文件夹
+        try:
+            index_files()  # 自动索引文档文件夹
+            print("启动时文件夹已成功索引！")
+        except Exception as e:
+            print(f"启动时文件夹索引失败: {e}")
 
         with gr.Row():
             audio_input = gr.Audio(label="上传语音文件", type="filepath")  # 上传语音文件
